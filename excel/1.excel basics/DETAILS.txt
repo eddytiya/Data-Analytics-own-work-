@@ -1,0 +1,107 @@
+EXCEL BASICS
+
+1.GETTING STARTED
+2.BASIC TERMINOLOGIES
+3.RIBBION
+
+
+
+1.THERE R 16384 COLUMNS PRESENT(REPRESENTED BY ALPHABETS)
+2.AROUND 1MILLION ROWS
+
+SO HOW MANY CELLS ARE THERE?
+
+
+REFER IMAGE 1 TO KONW WHAT ARE RIBBIONS
+
+
+HOME TAB:WE WILL SPEND MOST TIME HERE
+         CONSIST ALL THE REQUIRED THINGS
+
+INSERT TAB: INSERT SOMETHING INTO THE EXCEL WORKSHEET
+
+PAGE LAYOUT:PAGE LOOK APPEARANCE
+ETC
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+WORKSHEET BASICS
+
+BOTTOM LEFT ARE SHEETS(WE CAN ADD DELETE SHEETS BUT REMEMBER DELETING A SHEET CANT BE RECOVERED)
+
+REFER IMG 2 TO SEE HOW TO ADD CELLS BETWEEN TO ALREADY CREATED CELLS
+
+--ADD/DELETE ROWS OR COLMNS
+-ZOOM IN ZOOM OUT
+--ROW COLUMN SIZING
+---RENAMING THE SHEETS
+--HIDING AND UNHODIDNG OF DATA
+WE CAN ASO HIDE SHEETS IN THE SAME WAY
+
+ALL CAN BE DONE FROM ROW AND CLOUMN TABS
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+DATA FORMATS
+
+-changing the content of the cell
+-deleteing the content of the cell
+
+
+types of data we enter into cell
+ 1>textual
+ 2>numeric
+ 3>formula:like we have 2 cells and their multiplication is the answer in a third cell
+
+
+more formats in home tab
+
+steps:   enter jan1 1900 in one tab
+         next tab use any no and select short or long date format
+
+0increaszing or decresing the numbers after decimal
+like decimal pi value 3.14259
+we can decrease the value in cell
+
+----------------------------------------------------------------------------------------------------------------
+DATA HANDLING BASICS-CUT,COPY,PASTE
+
+
+
+-USE CTRL +DOWN ARROW TO DIRECTLY GO DOWN A TABLE AND VICEVERSA
+CTRL + UP/DOWN/LEFT/RIGHT  KEYS
+
+-CUT AND PASTE:REMOVED FROM OG POSTION AND TRANSFERED TO ANOTHER POSITION
+
+  KEYBOARD SHORTCUT :ctrl + x
+
+copy and paste
+
+-we can also select he abount of content u want 
+
+
+
+
+
+
+ctrl + shift + arrow key will select all the contents in the direction
+
+
+
+
+-undo:ctrl +z
+
+-----------------------------------------------------------------------------------------------------------------------
+saving and printing
+-----------------------------------------------------------------------------------------------------------------------
+this is a session on file tab which can be used for saving /opening /to print any part of the workbook
+
+
+-to protect your workbood with password 
+goto file-->indo-->encrypt document
+
+
+bottopn right htere is a option of page layout which tells u the display of your pages when printed
+
+------------------------------------------------------------------------------------------------------------------
+USING THE FORMULA BAR 
+REDER IMG 3

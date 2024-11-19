@@ -1,0 +1,129 @@
+BASIC FORMULA OPERATIONS
+SHEET 1 U CAN SEE 2 COLS
+NUM1 AND 2
+
+U CANS SEE -SUM 
+           -SUM(CONSTANT) {ADD 2 NOS + CONST}
+           -PRODUCT AND AVERAGE 
+
+
+FOR SUM:WRITE A FOEMULA
+FORMULA STARTS WITH =
+WRITE = THEN CLICK ON FIRST CELL THEN SECOND CELL
+
+-NOW IF ADDITION IS PROFIRMED SUCCESFULLY WE CAN EXTEND THE FORMULA
+   SELECT THE BOTTOM RIGHT CORNER OF THE CELL WE CREATED TO EXTEND THE FORMULA
+
+FOR CONSTANT WE NEED TO ADD N1+N2+CONST FORMULA FOR THAT WILL BE
+A2+B2+CONST
+
+
+BUT IF U DRAG DOWN THE ROW WILL TOO DRAG DOWN TO STOP THIS WE NEED TO USE DOLLAR SYMBOL
+EG:A2+B2+B$13
+
+
+FOR COLUMS WE NEED TO PUT DOLLAR SIGN IN FRONT OF THE ALPHABET $I5 : TO LOCK THE ALPHABET
+
+
+
+
+
+
+
+---------------------------------------------------------------------------------------------------------
+MATH-FUNCTIONS-1
+-------------------------------------------------------------------------------------------------------------------
+
+FUNCTIONS ARE PREDEFINED FORMULAS LIKE SUM DIFFERENCE
+ANYTHING CALCULATED IN A CELL IS A FORMULA
+
+EG: =SUM(M5,M6,M7)
+
+another formula
+used is the select one write sum() inside parenthesis select the range u wanna add
+eg:=SUM(M6:O6)
+
+
+
+=MIN(P32:P36)
+
+
+=AVERAGE(N86:P86)
+
+
+REFER SPREAD SHEET 3 FOR THIS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-----------------------------------------------------------------
+Difference between RANK, RANK.AVG and RANK.EQ
+There are three versions of the RANK formula that you can use in MS Excel
+
+RANK was available in the older versions of excel. We can still use it, probably it will not be available in the coming versions of Excel. There are two new versions of Rank now - RANK.EQ and RANK.AVG. Below example may clear the difference between these two -
+
+For values 5,6,6,7 -RANK and RANK.EQ will return ranks as 1,2,2,4 (Same rank for same values) and RANK.AVG will return ranks as 1 ,2.5 ,2.5 ,4. (Average of 2nd and 3rd rank). Because RANK.AVG takes average of the ranks where values are same, we often see decimal digits in ranks calculated using this formula.
+
+If all the values in the list are unique, all the three formulas assign same ranks in that case.-
+
+
+-------------------------------------------------------------------------------------------
+textual functions
+-------------------------------------------------------------------------------------------------
+
+-trim 
+
+ syntax=TRIM(Text)
+
+-concatinate
+ =CONCATENATE(L4,M4,N4)
+ =CONCATENATE(K5," has scored",L5," marks in the exam of maths")
+ =K5&" has scored "&N5&" marks in english"
+
+
+-subsitute
+  stubent  =SUBSTITUTE(K7,"b","d") __> student		
+ =SUBSTITUTE(K8,"38","95 ")		
+ =SUBSTITUTE(K9,"Science","English ")	
+
+look into the excel sheet for more
+
+
+----------------------------------------------------------------------
+logical functions
+-----------------------------------------------------------------------------
+=M5=100
+
+-refer excel sheet
+
+
+----------------------------------
+datea nad time
+--------------------------------------
+refer excel sheet
+
+
+
+---------------------------------------------------------------------------------------------------
+LOOKUP fUNCTIONS
+=====================================================================================================
+
+	
+				
+				
+				
+				
+				
+				
+				
+				

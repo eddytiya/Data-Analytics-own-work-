@@ -1,0 +1,10 @@
+sorting filtering and data validation
+
+
+sorting 
+
+select sort and filter column in the right had side and slect the row columns u wanna sort
+also u can define custom sort
+
+
+filtering

@@ -1,0 +1,20 @@
+charts re visual representation of numerical data
+
+
+-----------------------------------------
+eaay way of creating a chart
+=========================================
+
+starting with creating a chart which conveys a message
+
+to create a chart select your data
+and click on the recommended chart options in isert menu
+
+excel also has default layout and design options
+
+--but we will hardly use this type of things we will build our charts from scratch
+
+-----------------------------------------------------------------
+bar and column charts
+=================================================
+creating clustered column chart from scratch
