@@ -1,0 +1,9 @@
+used to eliminate duplicate records
+
+u can see image 2 has duplicate values if we only want one outta many duplucate value we do
+
+
+select distinct first_name from customer_table;
+
+
+select distinct first_name,age from customer_table;

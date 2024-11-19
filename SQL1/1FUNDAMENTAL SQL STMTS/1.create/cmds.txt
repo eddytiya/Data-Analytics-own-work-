@@ -1,0 +1,22 @@
+first query of create tables
+
+create table customer_table(
+	cust_id int,
+	First_name varchar,
+	last_name varchar,
+	age int,
+	email_id varchar
+	);
+
+
+
+
+EXERCISE1 soln:
+created a db and table entered the stated
+
+
+create table science_class(
+	enrollment_no int,
+	Name varchar,
+	science_marks INT
+);

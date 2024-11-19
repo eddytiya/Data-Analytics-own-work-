@@ -1,0 +1,28 @@
+insert
+
+insert into customer_table values
+(1,'bee','tee',32,'bt@xyz.in');
+
+
+
+
+insert into customer_table (cust_id,first_name,age,email_id) values
+(2,'deedee',23,'deedee@gmail.com')
+
+
+
+
+insert into customer_table values
+(3,'aditya','pathak',21,'adipat@gmail.com'),
+(4,'saiyam','gandhi',21,'saigand@gmail.com'),
+(5,'kishan','vishwakarma',21,'kishanvishwa@gmail.com'),
+(6,'virat','kohli',35,'vk18@gmail.com');
+
+
+
+
+copy customer_table from 'C:\Program Files\PostgreSQL\16\data/datacp.csv' delimiter ',' csv header;
+
+
+for a text file
+copy customer_table from 'C:\Program Files\PostgreSQL\16\data/datatext.txt' delimiter ',';

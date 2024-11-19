@@ -1,0 +1,64 @@
+alter table customer_table drop test;
+select * from customer_table;
+
+
+//changinf the dtype of age column from int to char
+
+alter table customer_table alter column age type varchar(255);
+select * from customer_table;
+
+
+//renaming a column
+
+alter table customer_table RENAME column email_id to customer_email;
+select * from customer_table;
+
+
+
+//adding or deleting a constraint
+
+alter table customer_table alter column cust_id set NOT NULL;
+
+//inserting values where cust id is missing
+
+insert into customer_table(first_name,last_name,age,customer_email)
+values('aditya','pathak',21,'987@hotlook.com');
+
+//dropping constraints
+alter table customer_table alter column cust_id drop NOT NULL;
+insert into customer_table(first_name,last_name,age,customer_email)
+values('aditya','pathak',21,'987@hotlook.com');
+select * from customer_table;
+
+
+
+//stating that the constraint should start from 1
+
+alter table customer_table add constraint cust_id check(cust_id>0);
+insert into customer_table(cust_id,first_name,last_name,age,customer_email)
+values(0,'aditya','pathak',21,'987@hotlook.com');
+select * from customer_table;
+
+
+insert into customer_table(cust_id,first_name,last_name,age,customer_email)
+values(2,'aditya','pathak',21,'987@hotlook.com');
+select * from customer_table;
+
+
+
+'''adding a primarykey and foreign key constraint'''
+
+alter table customer_table add primary key (cust_id);
+
+delete from customer_table ;
+
+
+insert into customer_table(cust_id,first_name,last_name,age,customer_email)
+values(1,'aditya','pathak',21,'987@hotlook.com');
+select * from customer_table;
+
+
+
+'''adding a primarykey and foreign key constraint'''
+
+alter table customer_table add primary key (cust_id);

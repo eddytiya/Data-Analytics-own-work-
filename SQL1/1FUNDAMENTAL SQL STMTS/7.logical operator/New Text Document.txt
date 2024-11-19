@@ -1,0 +1,7 @@
+select first_name,last_name,age from customer_table where age>=21 and age<34;
+
+select first_name,last_name,age from customer_table where age<21 OR age>25;
+
+select first_name,last_name,age from customer_table where NOT age=21;
+
+select first_name,last_name,age from customer_table where NOT age=21 and not first_name='deedee' ;

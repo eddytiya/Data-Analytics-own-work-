@@ -1,0 +1,11 @@
+insert into science_class values
+(1,'popeye',33),
+(2,'olive',54),
+(3,'brutus',98);
+
+
+
+copy science_class from 'C:\Program Files\PostgreSQL\16\data/student.csv' delimiter ',' csv header;
+
+
+the location is from where u can access the file any other saved location would not work

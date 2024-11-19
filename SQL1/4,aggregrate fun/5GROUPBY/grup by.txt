@@ -1,0 +1,33 @@
+--GROUPBY
+--suppose w wanna find out the number of peeps living in aparticualr satea or city u can grup them using this	
+
+select * from customer;	
+	
+select region,Count(customer_id) AS "customer count"
+	from customer 
+	group by region;
+
+--to find of the quantity of product sold from sales table
+
+select product_id,Sum(Quantity) AS quantity_sold
+	from sales 
+	group by product_id
+	Order by quantity_sold Desc;
+
+
+
+--FIND THE TOP 5 CUSTOMERS WHO HAVE SPEND MOST OF THE TIME AT OUR STORE AND FIND OUT ABOUT THEN
+	--HERE WE HAVE USED ALL OF OUR CLAUSES AND AGGREGATE FUNCTIONS
+select customer_id,
+MIN(sales) as min_sales,
+Max(sales) as max_sales,
+AVG(sales) as Average_sales,
+Sum(sales) as total_sales
+FROM sales
+GROUP BY customer_id
+order by total_sales DESC
+LIMIT 5;
+
+SELECT * FROM customer;
+
+select region,state,avg(age),COUNT(customer_name) from customer GROUP BY region,state;

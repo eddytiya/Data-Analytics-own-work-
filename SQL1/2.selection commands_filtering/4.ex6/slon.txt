@@ -1,0 +1,8 @@
+select * from customer;
+
+
+select distinct city from customer where region IN('North','East');
+
+select * from customer where age BETWEEN 30 and 45;
+
+select * from customer where customer_name LIKE '% ____';

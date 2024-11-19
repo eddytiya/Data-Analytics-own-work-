@@ -1,0 +1,19 @@
+select product_id,sum(sales) As total_sales,sum(quantity) aS total_quantity ,
+	count(order_id)as total_order,
+	max(sales) AS max_order,
+	min(sales) as min_order, 
+	avg(sales) as avg_order 
+from sales
+	group by product_id
+	order by total_sales;
+
+
+
+select product_id,sum(sales) As total_sales,sum(quantity) aS total_quantity,
+	count(order_id)as total_order,
+	max(sales) AS max_order,
+	min(sales) as min_order, 
+	avg(sales) as avg_order 
+from sales
+	group by product_id
+	having sum(quantity)>10;

@@ -1,0 +1,12 @@
+'''2.between'''
+select * from customer
+	where age between 20 and 30;
+'''it is same as'''
+select * from customer
+	where age>=20 and age<=30; 
+
+select * from customer
+	where age NOT BETWEEN 20 and 30; 
+
+select * from sales
+	where ship_date Between '2015-4-1' and '2016-4-1';

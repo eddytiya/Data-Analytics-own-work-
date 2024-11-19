@@ -1,0 +1,24 @@
+'''
+	3.like:used for pattern matching in strings using wild cards
+	%=allows u to match char of any str length
+	_=allows u to match a single character
+	'''
+
+select * from customer
+	where customer_name LIKE 'J%';
+
+
+select * from customer
+	where customer_name LIKE '%Nelson%';
+
+
+select * from customer
+	where customer_name LIKE '____ %';
+
+
+select distinct city,customer_name from customer
+	where customer_name NOT like 'S%';
+
+select * from customer
+	where customer_name LIKE 'G\%';
+

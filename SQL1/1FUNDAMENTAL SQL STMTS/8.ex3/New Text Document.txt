@@ -1,0 +1,7 @@
+select * from science_class
+
+select name from science_class where science_marks>60;
+
+select name,science_marks from science_class where science_marks>35 and science_marks<60;
+
+select name,science_marks from science_class where science_marks<=35 or science_marks>60;

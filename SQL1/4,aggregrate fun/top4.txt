@@ -1,0 +1,65 @@
+---count
+select * from sales;
+
+
+select count(*)from sales;
+
+select count(order_line) AS "number of product ordered",count (distinct order_id) AS "number of orders"
+	from sales where customer_id='CG-12520';
+
+---sum
+select * from sales;
+
+select sum(profit) AS "total profit"
+from sales;
+
+SELECT * FROM PRODUCT;
+
+select sum(Quantity) AS "total profit"
+from sales where product_id='FUR-TA-10000577';
+
+
+--average function
+select * from customer
+
+
+select AVG(age) AS "average age" 
+from customer;
+
+
+--avg commission i am getting as 10%
+SELECT AVG(sales*0.10) as "average comission value" from sales;
+
+
+
+
+--min and max
+select * from sales;
+
+select min(sales) as "minimum_sales_amount" from sales
+where order_date between '2015-06-01'and'2015-06-30'
+
+select max(sales) as "minimum_sales_amount" from sales
+where order_date between '2015-06-01'and'2015-06-30'
+
+
+
+
+-exercise
+
+select * from sales;
+
+select SUM(sales) as "sum of all sales value" from sales;
+
+select * from customer;
+
+select count(customer_name) as "no of customers" from customer 
+	where age between 20 and 30 
+	;
+
+
+select avg(age) as "avg age east" from customer
+where region='East';
+
+select min(age),max(age) from customer
+where city='Philadelphia'

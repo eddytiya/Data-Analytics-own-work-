@@ -1,0 +1,23 @@
+update science_class 
+set science_marks=45 
+where name='popeye';
+
+select * from science_class;
+
+
+
+
+
+delete from science_class 
+where name ='Robb';
+
+
+select * from science_class;
+
+
+
+
+
+
+alter table science_class
+Rename column name to student_name;

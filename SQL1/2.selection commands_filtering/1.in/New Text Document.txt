@@ -1,0 +1,10 @@
+'''1.IN cmd'''
+select * from customer
+	where city IN('Philadelphia','Seattle');
+
+'''in is like OR logical stmt bt in is preffered'''
+select * from customer
+	where city='Philadelphia' OR city='Seattle';
+
+select * from customer
+	where age IN(34,35);

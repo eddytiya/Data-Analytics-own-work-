@@ -1,0 +1,20 @@
+--ordering
+
+select * from customer
+	where state='California' 
+	order by customer_name ;
+
+select * from customer
+	where state='California' 
+	order by customer_name ASC;
+
+select * from customer 
+order by 2 Desc;
+
+
+select * from customer
+	where age>25 
+	order by age asc,customer_name DESC;
+
+select * from customer 
+order by age ;

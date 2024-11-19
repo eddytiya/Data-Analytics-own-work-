@@ -1,0 +1,6 @@
+select first_name from customer_table where age=21;
+
+select distinct first_name from customer_table where age>21;
+
+select * from customer_table where first_name= 'deedee';
+
