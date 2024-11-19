@@ -1,0 +1,111 @@
+--replace:cahnge one str to another
+select customer_id,
+	country,
+	replace(country,'United States','US') AS new_country
+	from customer;
+
+
+--the replace function are case senstitive if u r not sure abour the case lower everything
+--replace:cahnge one str to another
+select customer_id,
+	country,
+	replace(lower(country)	,'UNITED STATES','US') AS new_country
+	from customer;
+
+
+--trim:remove characters from string
+--Ltrima and Rtrim are also there
+
+
+SELECT trim (leading''from '  this is from starting removal')
+SELECT trim (trailing''from '  this is from back removal   ')
+SELECT trim (both''from '  this is from back and start removal   ')
+
+select trim (' this is from the start ')
+select rtrim (' this is from the right   ')
+select ltrim ('  this is from the left')
+
+
+
+SELECT TRIM(LEADING ' ' FROM '  this is from starting removal') AS result
+UNION ALL
+SELECT TRIM(TRAILING ' ' FROM '  this is from back removal   ') AS result
+UNION ALL
+SELECT TRIM(BOTH ' ' FROM '  this is from back and start removal   ') AS result
+UNION ALL
+SELECT TRIM(' this is from the start ') AS result
+UNION ALL
+SELECT RTRIM(' this is from the right   ') AS result
+UNION ALL
+SELECT LTRIM('  this is from the left') AS result;
+
+
+--concat
+select * from customer
+
+
+select 
+	customer_name,
+	city ||','||state||','||country AS address
+	from customer
+
+
+--substring allows u to extract a substring from a string
+--suppose customer_id is ab-0003244
+--we can seggregate AB and the number as different
+
+select 
+	Customer_id,
+    Customer_name,
+    SUBSTRING(Customer_id FOR 2) AS cust_grup
+from customer
+where substring(Customer_id for 2)='AB'
+
+
+select 
+	Customer_id,
+    Customer_name,
+    SUBSTRING(Customer_id FROM 4 FOR 5) AS cust_grup
+from customer
+where substring(Customer_id for 2)='AB'
+
+
+--string aggrigator is also used for concat
+--but it concat in different columns and not everything in the same column
+
+select * from sales ;	
+
+--here customer may have 1 order id thru which 
+--multiple products are being ordered
+SELECT 
+        order_id,
+        STRING_AGG(product_id,',')
+from sales
+group by order_id
+order by order_id
+
+
+
+
+--exercise13
+select * from public.product
+--1
+select max(length(product_name)) from product
+--2
+select product_name,sub_category,category,
+product_name||','||sub_category||','||category AS product_details
+from product
+--3
+select
+product_id,
+SUBSTRING(product_id FROM 1 FOR 3) AS starting,
+SUBSTRING(product_id FROM 5 FOR 2) AS middle,
+SUBSTRING(product_id FROM 7 FOR 8) AS ending
+from product
+--4
+SELECT 
+    STRING_AGG(product_name, ',') AS product_names
+FROM product
+WHERE sub_category IN ('chairs', 'tables');
+
+select string_agg(product_name,', ') from product where sub_category in ('Chairs','Tables')

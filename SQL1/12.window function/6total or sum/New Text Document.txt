@@ -1,0 +1,44 @@
+---total function(sum) will add the total amount in the column
+SELECT customer,
+       store,
+	orders,
+       sum (orders) OVER (PARTITION BY store) AS Total_orders
+FROM customerstoreorders;
+
+
+select * from sales
+
+
+select order_id,
+	max(order_date) as order_date,
+	max(customer_id) as customer_id,
+	sum (sales)as sales 
+	from sales
+group by order_id
+
+
+create table order_rollup as
+select order_id,
+	max(order_date) as order_date,
+	max(customer_id) as customer_id,
+	sum (sales)as sales 
+	from sales
+group by order_id
+
+create table order_rollup_table as
+select a.*,b.state
+from order_rollup as a
+left join customer as b
+on a.customer_id=b.customer_id
+
+
+
+select * from order_rollup_table
+
+select *,
+	sum(sales) over (partition by state) as total_sales
+from order_rollup_table
+
+
+
+

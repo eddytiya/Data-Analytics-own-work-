@@ -1,0 +1,109 @@
+--pattern matching strings
+--1.like functions
+--%:allows u to match any string of any length(including zero length)
+--_:allows u to match on a single character
+
+SELECT * FROM customer
+where customer_name LIKE 'J%'
+
+SELECT * FROM customer
+where customer_name LIKE '%od%'
+
+SELECT * FROM customer
+where first_name LIKE 'jas_n'
+
+
+SELECT * FROM customer
+where customer_name NOT LIKE 'J%'
+
+
+SELECT * FROM customer
+where customer_name LIKE 'J\%'
+
+
+--regex wild card
+--suppose u want to filterout incvalid email ids from yoour data
+--ADVANCE PATTERN MATCHING
+SELECT * FROM customer
+WHERE customer_name ~* '^a+[a-z\s]*$';
+/*
+The regex pattern ^a+[a-z\s]$ in your query aims to match customer names that start with one or more 'a' characters and are followed by a single lowercase letter or space, ending the string. However, the pattern likely doesn't match the intended names as it requires the string to end right after one lowercase letter or space. To help clarify and adjust the regex pattern, here's a breakdown:
+
+^: Asserts the position at the start of the string.
+a+: Matches one or more 'a' characters.
+[a-z\s]: Matches a single character that is either a lowercase letter or a space.
+$: Asserts the position at the end of the string.
+*/
+
+-------------------------------------------
+SELECT * FROM customer
+WHERE customer_name ~* '^(a|b|c|d)+[a-z\s]*$';
+
+/*
+The regex pattern ^(a|b|c|d)+[a-z\s]*$ (used OR operator)in your query aims to match customer names that start 
+with one or more of the letters 'a', 'b', 'c', or 'd' and are followed by any combination of lowercase letters 
+and spaces until the end of the string. Here is a breakdown of the pattern:
+
+^: Asserts the position at the start of the string.
+(a|b|c|d)+: Matches one or more of the letters 'a', 'b', 'c', or 'd'.
+[a-z\s]*: Matches zero or more characters that are lowercase letters or spaces.
+$: Asserts the position at the end of the string.
+*/
+
+
+--if we want the first and last name to be the same char length
+
+SELECT * FROM customer
+WHERE customer_name ~* '^(a|b|c|d)[a-z]{3}\s+[a-z\s]{4}$';
+/*
+Here's a breakdown of the pattern:
+
+^: Asserts the position at the start of the string.
+(a|b|c|d): Matches one of the letters 'a', 'b', 'c', or 'd'.
+[a-z]{3}: Matches exactly three lowercase letters.
+\s+: Matches one or more whitespace characters.
+[a-z\s]{4}: Matches exactly four characters that are either lowercase letters or whitespace.
+$: Asserts the position at the end of the string.
+*/
+
+
+SELECT * FROM customer
+WHERE customer_name ~* '^(a|b|c|d)[a-z]{3}\s+[a-z\s]{4}$';
+
+
+create table users(id serial primary key, name character varying);
+
+insert into users (name) VALUES ('Alex'), ('Jon Snow'), ('Christopher'), ('Arya'),('Sandip Debnath'), ('Lakshmi'),('alex@gmail.com'),('@sandip5004'), ('lakshmi@gmail.com');
+
+
+SELECT * FROM users
+WHERE name ~* '[a-z0-9\.\-\_]+@[a-z0-9\-]+\.[a-z]{2,5}';
+/*
+The regex pattern [a-z0-9\.\-\_]+@[a-z0-9\-]+\.[a-z]{2,5} is used to match email addresses.
+
+[a-z0-9\.\-\_]: This defines a character class that matches:
+Lowercase letters a-z
+Digits 0-9
+A literal dot .
+A hyphen -
+An underscore _
++: Ensures that one or more of the characters in the character class are present. This covers the part before the @ symbol in an email address.
+@:
+
+Matches the literal @ character in the email address.
+[a-z0-9\-]+:
+
+[a-z0-9\-]: This defines a character class that matches:
+Lowercase letters a-z
+Digits 0-9
+A hyphen -
++: Ensures that one or more of the characters in the character class are present. 
+This covers the domain part of the email address before the dot.
+\.:
+
+Matches a literal dot .. In regex, a dot must be escaped with a backslash \ to be treated as a literal character rather than any character.
+[a-z]{2,5}:
+
+[a-z]: This defines a character class that matches lowercase letters a-z.
+{2,5}: Specifies that the preceding character class should appear between 2 and 5 times. This covers the top-level domain (TLD) part of the email address, like .com, .org, or .info.
+*/

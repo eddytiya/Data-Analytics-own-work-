@@ -1,0 +1,51 @@
+---lag/lead
+--lag:give us the values of previous rows
+--lead:the values of next rows
+
+
+
+-- Create the table
+CREATE TABLE CustomerRevenue (
+    Cust VARCHAR(10),
+    Date DATE,
+    Revenue INT
+);
+
+-- Insert the data
+INSERT INTO CustomerRevenue (Cust, Date, Revenue) VALUES
+('C-1', '2022-01-01', 100),
+('C-2', '2022-03-30', 300),
+('C-2', '2022-04-21', 300),
+('C-2', '2022-05-10', 200),
+('C-1', '2022-05-11', 200),
+('C-2', '2022-06-12', 400),
+('C-1', '2022-08-25', 300);
+
+select * from CustomerRevenue
+
+select cust,date,revenue,
+lag(revenue,1)over (partition by cust order by date desc) as lag
+from CustomerRevenue
+--here 1 is the interval
+
+
+--suppose we wanna calc the lag values on customer orders in the bottom table
+select *,
+	sum(sales) over (partition by state) as total_sales,
+	sum(sales) over (partition by state order by order_date) as "running total"
+from order_rollup_table
+
+select customer_id, order_date,order_id,sales,
+	lag(sales,1) over (partition by customer_id order by order_date) as previous_value,
+	lag(order_id,1) over (partition by customer_id order by order_date) as "previous id"
+from order_rollup_table
+
+--lead:get the data of next row
+select cust,date,revenue,
+lead(revenue,1)over (partition by cust order by date desc) as lag
+from CustomerRevenue
+
+select customer_id, order_date,order_id,sales,
+	lead(sales,1) over (partition by customer_id order by order_date) as previous_value,
+	lead(order_id,1) over (partition by customer_id order by order_date) as "previous id"
+from order_rollup_table

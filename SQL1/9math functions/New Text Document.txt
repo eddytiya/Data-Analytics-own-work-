@@ -1,0 +1,63 @@
+--mathematical functions
+
+--1.ceil:smallest integer value which is greater than equal to a number eg:12.5=13
+--2.floorlargest integer value which is greater than equal to a number eg:11.4=11
+
+select * from sales;
+
+select order_line,
+       sales,
+	   ceil(sales),
+       floor(sales)
+	from sales;
+
+
+--3.random function:used to generate  arandom value between 0 and 1
+
+--random decimal betn a range
+
+SELECT RANDOM()--this will give a random number betn 0 and 1
+
+SELECT RANDOM(),random()*40+10--this will give random value betn 10 and 50
+
+SELECT RANDOM(),random()*40+10,floor(random()*40)+10; --integer value between 10 and 50
+
+
+--4.setseed: to fix the same set of random values
+
+select setseed(0.5)
+select random();--value is:0.9851677175347999
+select random();--value is:0.825301858027981
+
+select setseed(0.5);
+select random();
+select random();
+--runn in order u will get the same seed as previous random number
+
+
+--5.round:used to round number to a nearest integer
+select order_id,sales,round(sales) from sales order by order_id desc;
+
+
+
+--6.power func
+select age,power(age,2) from customer
+
+
+
+
+--exercise
+
+select * from customer
+--1.random:how to select random 5 customer names from a table
+	SELECT customer_name
+FROM customer
+ORDER BY RANDOM()
+LIMIT 5;
+
+--2.
+
+select * from sales
+
+select sum(sales),sum(ceil(sales)),sum(floor(sales)),sum(round(sales)) from sales
+

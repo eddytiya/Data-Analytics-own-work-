@@ -1,0 +1,54 @@
+--date time functions
+--1.curret_date function returns current date
+--2.current_time func returns the current time in the time zone
+--3.current_timestamp:function returns the current date and time with the time zone
+
+sElect CURRENT_DATE,CURRENT_TIME,CURRENT_TIME(1),
+	CURRENT_TIMESTAMP;
+
+--4.AGE FUNCTION:RETURNS THE NO OF YEARS MONTHS AND DAYS BETWEEN 2 GIVEN DATES
+SELECT AGE('2003-02-22',CURRENT_DATE)
+
+
+--FIND THE NUMBER OF MONTHS TAKEN BETN ORDERDATE AND SHIP DATE FROM SALES TABLE
+
+SELECT * FROM sales;
+
+select order_line,ship_date,order_date,age(ship_date,order_date) AS delivery_time from sales order by delivery_time desc
+
+
+--5.extract function extracts parts from the dates
+--units are day,decade,doy,epoch,hour,min,month,sec,year
+
+SELECT EXTRACT(day FROM '2024-04-25'::date)
+
+SELECT EXTRACT(month FROM '2024-04-25 08:44:21'::timestamp)
+
+	select current_timestamp,extract(month from current_timestamp)
+
+	
+select order_date,ship_date,
+(extract(epoch from ship_date)-extract(epoch from order_date)) 
+	AS sec_taken 
+from sales
+
+
+--exercise
+--1.age of batman in yrs in years,months,days
+select age('1939-04-06',current_date)
+
+
+2.
+
+	select * from sales
+	
+select extract(month from order_date) as month ,sum(sales) as total from sales
+where product_id IN (select product_id from product where sub_category='chairs')
+group by month
+order by month;
+
+select extract(month from order_date) as month_n, sum(sales) as total_sales from sales 
+where product_id in (select product_id from product where sub_category = 'Chairs')
+group by month_n
+order by month_n ;
+

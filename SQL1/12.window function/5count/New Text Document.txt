@@ -1,0 +1,19 @@
+--count 
+--no of things we want to know 
+SELECT customer,
+       store,
+       COUNT(customer) OVER (PARTITION BY store) AS n_cust
+FROM customerstoreorders;
+
+
+--total number of customers from each state
+select * from public.customer_order
+
+
+
+select 
+	customer_name,
+	customer_id,
+    state,
+    count(customer_id)over(partition by state) as NO_OF_PEEPS
+    from public.customer_order

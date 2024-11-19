@@ -1,0 +1,21 @@
+----average function
+--suppose u want the avg value of each store in front of it 
+
+
+select customer,store,orders,
+avg(orders) over(partition by store )
+from public.customerstoreorders
+
+	select * from public.customer_order
+--calc the avg revenue of each state
+select customer_name,customer_id,state,sales_tot as revenue,
+	avg(sales_tot) over (partition by state  ) as region
+	from public.customer_order
+
+
+--suppose u want the list of customers whose revenue is less
+select * from (select customer_name,customer_id,state,sales_tot as revenue,
+	avg(sales_tot) over (partition by state  ) as avg_revenue
+	from public.customer_order) as a
+where a.revenue<avg_revenue
+

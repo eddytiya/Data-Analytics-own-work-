@@ -1,0 +1,19 @@
+--rank
+--rank gives same number of rank to the same values
+--also we have dense_rank 
+--this willw never skip any no while numbering
+
+select customer,store,orders,
+rank() over(partition by store Order by orders desc) as row
+from public.customerstoreorders
+
+select customer,store,orders,
+dense_rank() over(partition by store Order by orders desc) as row
+from public.customerstoreorders
+
+
+select customer_id,customer_name,state,order_num,
+row_number() over(partition by state Order by order_num desc) as row_n,
+rank() over(partition by state Order by order_num desc) as rank_n,
+	dense_rank() over(partition by state Order by order_num desc) as denserank_n
+from customer_order
